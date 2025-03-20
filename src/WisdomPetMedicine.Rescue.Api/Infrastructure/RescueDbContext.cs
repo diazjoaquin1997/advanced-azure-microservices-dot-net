@@ -13,7 +13,6 @@ namespace WisdomPetMedicine.Rescue.Api.Infrastructure
         
         public DbSet<Adopter> Adopters { get; set; }
         public DbSet<RescuedAnimal> RescuedAnimals { get; set; }
-
         public DbSet<PetFlaggedForAdoptionIntegrationEvent> RescuedAnimalsMetadata { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

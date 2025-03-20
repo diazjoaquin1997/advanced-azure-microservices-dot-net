@@ -2,11 +2,14 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using WisdomPetMedicine.Hospital.Api.IntegrationEvents;
 
 namespace WisdomPetMedicine.Hospital.Api.Infrastructure
 {
     public class HospitalDbContext : DbContext
     {
+        public DbSet<PetTransferredToHospitalIntegrationEvent> PatientsMetadata { get; set; }
+
         public HospitalDbContext(DbContextOptions<HospitalDbContext> options) : base(options) { }
     }
 

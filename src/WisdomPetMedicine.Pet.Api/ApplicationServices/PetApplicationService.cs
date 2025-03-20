@@ -42,6 +42,22 @@ namespace WisdomPetMedicine.Pet.Api.ApplicationServices
 
                 await PublishIntegrationEventAsync(integrationEvent, configuration["ServiceBus:ConnectionString"], configuration["ServiceBus:Adoption:TopicName"]);
             });
+
+            DomainEvents.PetTransferredToHospital.Register(async c =>
+            {
+                var integrationEvent = new PetTransferredToHospitalIntegrationEvent()
+                {
+                    Id = c.Id,
+                    Name = c.Name,
+                    Breed = c.Breed,
+                    Sex = c.Sex,
+                    Color = c.Color,
+                    DateOfBirth = c.DateOfBirth,
+                    Species = c.Species
+                };
+
+                await PublishIntegrationEventAsync(integrationEvent, configuration["ServiceBus:ConnectionString"], configuration["ServiceBus:Transfer:TopicName"]);
+            });
         }
 
         public async Task HandleCommandAsync(CreatePetCommand command)
@@ -97,7 +113,7 @@ namespace WisdomPetMedicine.Pet.Api.ApplicationServices
             var sender = client.CreateSender(topicName);
             var message = new ServiceBusMessage()
             {
-                Body = new System.BinaryData(body),
+                Body = new BinaryData(body),
                 MessageId = Guid.NewGuid().ToString(),
                 ContentType = MediaTypeNames.Application.Json,
                 Subject = integrationEvent.GetType().FullName

@@ -1,8 +1,9 @@
 ﻿using System;
+using WisdomPetMedicine.Common;
 
 namespace WisdomPetMedicine.Pet.Api.IntegrationEvents
 {
-    public class PetTransferredToHospitalIntegrationEvent
+    public class PetTransferredToHospitalIntegrationEvent : IIntegrationEvent
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
