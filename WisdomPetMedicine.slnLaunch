@@ -1,0 +1,23 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "src\\WisdomPetMedicine.Rescue.Api\\WisdomPetMedicine.Rescue.Api.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "src\\WisdomPetMedicine.Pet.Api\\WisdomPetMedicine.Pet.Api.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "src\\WisdomPetMedicine.Hospital.Api\\WisdomPetMedicine.Hospital.Api.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "src\\WisdomPetMedicine.RescueQuery.Api\\WisdomPetMedicine.RescueQuery.Api.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

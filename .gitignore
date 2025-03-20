@@ -455,3 +455,4 @@ $RECYCLE.BIN/
 /src/WisdomPetMedicine.Hospital.Api/appsettings.json
 /src/WisdomPetMedicine.Pet.Api/appsettings.json
 /src/WisdomPetMedicine.Rescue.Api/appsettings.json
+/src/WisdomPetMedicine.RescueQuery.Api/appsettings.json
